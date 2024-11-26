@@ -29,6 +29,35 @@ describe("Teste computer-database", () => {
 
 		cy.get('tbody tr').should('have.length', 4);
 	})
+
+	it("Teste computador inexistente", () => {
+		searchComputer("ComputadorInexistente")
+
+		cy.get('em').should("contain.text", "Nothing to display")
+	})
+
+	it("Teste deletar um computador", () => {
+		searchComputer("ASUS")
+
+		cy.get('tbody > :nth-child(1) > :nth-child(1) > a').click()
+
+		cy.get('.topRight > .btn').click({ force: true })
+
+		cy.get('.alert-message').should("contain.text", "Done !")
+		cy.get('.alert-message').should("contain.text", "Computer ASUS Eee PC 1005PE has been deleted")
+	})
+
+	it("Teste atualizar um computador", () => {
+		searchComputer("ASUS")
+
+		cy.get('tbody > :nth-child(1) > :nth-child(1) > a').click()
+
+		cy.get('#discontinued').type("2024-11-25")
+		cy.get('.primary').click()
+
+		cy.get('.alert-message').should("contain.text", "Done !")
+		cy.get('.alert-message').should("contain.text", "Computer ASUS Eee PC 1005PE has been updated")
+	})
 })
 
 function goToPage() {
