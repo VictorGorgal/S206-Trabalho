@@ -1,8 +1,8 @@
 # Projeto de Testes
 
 Feito em dupla por:
-Nathália Aparecida Almeida Costa (508)
-Victor Arruda Gorgal (524)
+- Nathália Aparecida Almeida Costa (508)
+- Victor Arruda Gorgal (524)
 
 Este repositório contém dois diretórios: `Testes de API` e `Testes de UI`.
 
