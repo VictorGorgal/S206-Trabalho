@@ -47,4 +47,4 @@ cd S206-Trabalho
     npx cypress run --reporter mochawesome
     ```
 
-4. O relatório estará disponível na pasta de saída configurada (geralmente `cypress/reports`).
+4. O relatório estará disponível na pasta de saída configurada (`cypress/mochawesome-report`).
